@@ -1,4 +1,8 @@
-var dependencies = ['jquery', 'app/models/sample', 'app/views/test'];
+var dependencies = [
+  'jquery',
+  'app/models/sample',
+  'app/views/test',
+];
 
 define(dependencies, function($, Model, View) {
   var model = new Model({ name: 'Dr Brown' });

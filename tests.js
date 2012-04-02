@@ -31,9 +31,9 @@ requirejs(dependencies, function($, Backbone, Model, View, Router) {
     'render a view': function(g) {
       var model = new Model({ name: "Larry" });
       var view = new View({ model: model });
-      var renderedView = view.render().el;
+      var content = $(view.render().el).find("h1").text();
 
-      g.assertEqual($(renderedView).html(), "Hello Larry");
+      g.assertEqual(content, "Hello Larry");
     },
 
     'working with the router': function(g) {
