@@ -4,10 +4,7 @@ var scenario  = require('gerbil').scenario;
 requirejs.config({
   nodeRequire: require,
   baseUrl: 'js',
-  paths: {
-    "jquery"     : "./libs/jquery",
-    "underscore" : "./libs/underscore",
-  }
+  paths: { "jquery": "./libs/jquery" }
 });
 
 var dependencies = [

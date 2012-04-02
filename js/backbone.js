@@ -1,4 +1,4 @@
-define(['jquery', 'libs/backbone.js'], function($) {
+define(['jquery', './libs/backbone.js'], function($) {
   if(typeof window == 'undefined') {
     var jsdom      = require('jsdom');
 
