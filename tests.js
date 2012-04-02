@@ -18,6 +18,19 @@ var dependencies = [
 
 requirejs(dependencies, function($, Backbone, Model, View, Router) {
   scenario('Testing Headless Backbone features', {
+    'saving a model': function(g) {
+      Backbone.sync = function() {};
+
+      var validModel = new Model({ name: 'Marty' });
+      validModel.save();
+
+      var invalidModel = new Model;
+      invalidModel.save();
+
+      g.assert(validModel.isValid());
+      g.assert(!invalidModel.isValid());
+    },
+
     'render a view': function(g) {
       var model = new Model({ name: "Larry" });
       var view = new View({ model: model });
