@@ -10,13 +10,14 @@ requirejs.config({
   }
 });
 
-requirejs(['jquery', 'backbone', 'app/views/test'], function($, Backbone, View) {
+requirejs(['jquery', 'backbone', 'app/models/sample', 'app/views/test'], function($, Backbone, Model, View) {
   scenario('Something', {
     'Testing a view': function(g) {
-      var view = new View;
+      var model = new Model({name: "Larry"});
+      var view = new View({model: model});
       var renderedView = view.render().el;
 
-      g.assertEqual($(renderedView).html(), "Hello Dude");
+      g.assertEqual($(renderedView).html(), "Hello Larry");
     }
   });
 });
